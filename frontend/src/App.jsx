@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { io } from 'socket.io-client'
 
-export const socket = io(process.env.BACKEND_URL);
+export const socket = io(import.meta.env.BACKEND_URL);
 
 function App() { 
   const [messages, setMessages] = useState([]);
-  const [message, setMessage] = useState('')
+  const [message, setMessage] = useState('');
 
   socket.on('chat message', (msg) => {
     const newMessages = [...messages, msg];
@@ -16,7 +16,7 @@ function App() {
     try {
       const PostMessage = {message}
 
-      const response = await fetch(process.env.BACKEND_URL + '/api/chat', {
+      const response = await fetch(import.meta.env.BACKEND_URL + '/api/chat', {
         method: 'POST',
         body: JSON.stringify(PostMessage),
         headers: {
