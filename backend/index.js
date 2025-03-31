@@ -1,7 +1,7 @@
 import express from 'express'
 import { createServer } from 'node:http'
 import { Server } from 'socket.io'
-import chatRouter from './routes/chatRouter'
+import chatRouter from './routes/chatRouter.js'
 import mongoose from 'mongoose'
 import cors from 'cors'
 import dotenv from 'dotenv'

@@ -1,5 +1,5 @@
 import express from 'express'
-import Message from '../models/messageModel';
+import Message from '../models/messageModel.js';
 
 const router = express.Router();
 
@@ -54,4 +54,4 @@ router.delete('/:id', async (req, res) => {
     }
 })
 
-module.exports = router
+export default router;
