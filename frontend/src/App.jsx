@@ -46,7 +46,7 @@ function App() {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const response = await fetch('/api/chat');
+        const response = await fetch('https://mern-stack-chat-app-0ezx.onrender.com/api/chat');
         const json = await response.json();
   
         if (response.ok) {
