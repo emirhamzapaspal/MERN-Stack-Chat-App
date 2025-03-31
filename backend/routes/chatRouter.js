@@ -1,5 +1,5 @@
-const express = require('express')
-const Message = require('../models/messageModel.js').default;
+import express from 'express'
+import Message from '../models/messageModel';
 
 const router = express.Router();
 
