@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { io } from 'socket.io-client'
 
-export const socket = io(import.meta.env.VITE_BACKEND_URL);
+export const socket = io('https://mern-stack-chat-app-0ezx.onrender.com');
 
 function App() { 
   const [messages, setMessages] = useState([]);
@@ -20,7 +20,7 @@ function App() {
     try {
       const PostMessage = {message}
 
-      const response = await fetch(import.meta.env.VITE_BACKEND_URL + '/api/chat', {
+      const response = await fetch('https://mern-stack-chat-app-0ezx.onrender.com/api/chat', {
         method: 'POST',
         body: JSON.stringify(PostMessage),
         headers: {
